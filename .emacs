@@ -1,8 +1,12 @@
-(add-to-list 'load-path "/Users/cgordon/.emacs.d")
+(add-to-list 'load-path "/Users/charlesgordon/.emacs.d")
 
 (require 'color-theme)
 (require 'color-theme-zenburn)
-(color-theme-zenburn)>
+(color-theme-zenburn)
+
+(require 'google-c-style)
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 (require 'ido)
 
@@ -22,18 +26,6 @@
 (setq-default indent-tabs-mode nil)
 (setq default-tab-width 4)
 
-;; Python
-
-;; Used to make sure /usr/local/bin/python is used by run-python
-(add-to-list 'exec-path "/usr/local/bin")
-
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
-
-(pymacs-load "ropemacs" "rope-")
 (setq ido-enable-flex-matching t)
 
 (custom-set-variables
